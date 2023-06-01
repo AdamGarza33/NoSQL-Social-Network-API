@@ -31,3 +31,5 @@ router.route("/:thoughtId/reactions").post(addReaction);
 // DELETE route to remove a reaction from a specific thought
 router.route("/:thoughtId/reactions/:reactionId").delete(removeReaction); 
 
+// Export the router to be used in other parts of the application
+module.exports = router;
