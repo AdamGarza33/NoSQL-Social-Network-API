@@ -24,5 +24,10 @@ router.route("/").get(getAllThought).post(createThought);
   router.route("/:id").get(getThoughtById).put(updateThought).delete(deleteThought); 
 
   // Define the routes for /api/thoughts/:thoughtId/reactions
-router.route("/:thoughtId/reactions")
-.post(addReaction); // POST route to add a reaction to a specific thought
+  // POST route to add a reaction to a specific thought
+router.route("/:thoughtId/reactions").post(addReaction);
+
+// Define the routes for /api/thoughts/:thoughtId/reactions/:reactionId
+// DELETE route to remove a reaction from a specific thought
+router.route("/:thoughtId/reactions/:reactionId").delete(removeReaction); 
+
