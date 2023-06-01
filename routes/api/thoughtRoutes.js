@@ -13,3 +13,9 @@ const {
 } = require("../../controllers/thought-controller");
 
 // Define the routes for /api/thoughts
+router.route("/")
+  .get(getAllThought) // GET route to retrieve all thoughts
+  .post(createThought); // POST route to create a new thought
+
+  // Define the routes for /api/thoughts/:id
+  
