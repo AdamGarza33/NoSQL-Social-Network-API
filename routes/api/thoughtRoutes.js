@@ -13,9 +13,12 @@ const {
 } = require("../../controllers/thought-controller");
 
 // Define the routes for /api/thoughts
-router.route("/")
-  .get(getAllThought) // GET route to retrieve all thoughts
-  .post(createThought); // POST route to create a new thought
+// GET route to retrieve all thoughts
+// POST route to create a new thought
+router.route("/").get(getAllThought).post(createThought); 
 
   // Define the routes for /api/thoughts/:id
-  
+  // GET route to retrieve a specific thought by ID
+  // PUT route to update a specific thought by ID
+  // DELETE route to delete a specific thought by ID
+  router.route("/:id").get(getThoughtById).put(updateThought).delete(deleteThought); 
