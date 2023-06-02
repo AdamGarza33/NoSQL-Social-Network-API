@@ -49,7 +49,7 @@ const ReactionSchema = new Schema(
       createdAt: {
         type: Date,
         default: Date.now,
-        // Use a getter method to format the timestamp on query
+        // Use a get method to format the timestamp on query
         get: (timestamp) => dateFormat(timestamp),
       },
   
@@ -69,3 +69,11 @@ const ReactionSchema = new Schema(
       id: false,
     }
   );
+
+  ThoughtSchema.virtual("reactionCount").get(function () {
+    return this.reactions.length;
+  });
+
+  const Thought = model("Thought", ThoughtSchema);
+
+  module.exports = Thought;
