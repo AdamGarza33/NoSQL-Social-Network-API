@@ -10,7 +10,7 @@ const {
   deleteThought,
   addReaction,
   removeReaction,
-} = require("../../controllers/thought-controller");
+} = require("../../controllers/thoughtController");
 
 // Define the routes for /api/thoughts
 // GET route to retrieve all thoughts
